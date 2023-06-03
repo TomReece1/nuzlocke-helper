@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: DodgerBlue;
 }
 
 code {
@@ -15,7 +16,7 @@ code {
 .flex-container {
   display: flex;
   flex-wrap: nowrap;
-  background-color: DodgerBlue;
+  /* background-color: DodgerBlue; */
   text-align: center;
 }
 

@@ -126,14 +126,12 @@ function App() {
   renderInput={(params) => <TextField {...params} label="Pokemon" />}
 />
 
-{pokemon.name ? <p>
+{!pokemon.name ? <p>Pick a pokemon</p> : 
+  <><p>
           {pokemon.name} is {pokemon.types[0].type.name}
           {pokemon.types[1] && '/'+pokemon.types[1].type.name}
-        </p> : <p>Pick a pokemon</p>}
+        </p>  
 
-        <p>
-          
-        </p>
 
 <TableContainer sx={{ width: 300, }} component={Paper}>
       <Table  aria-label="simple table">
@@ -158,6 +156,8 @@ function App() {
         </TableBody>
       </Table>
     </TableContainer>
+    </>
+}
 
     </div>
   );
