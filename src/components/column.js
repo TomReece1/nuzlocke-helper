@@ -4,8 +4,9 @@ import Dropdown from "./dropdown";
 import { calcMultipliers } from "./brain";
 import Typetable from "./typetable";
 
-function Column() {
-  const [pokemon, setPokemon] = useState({});
+function Column({pokemon, setPokemon}) {
+  // const [pokemon, setPokemon] = useState({});
+
   const [multipliers, setMultipliers] = useState([]);
 
   function handleChange(event, value) {
@@ -29,7 +30,7 @@ function Column() {
   }
 
   return (
-    <>
+    <div className="flex-container-col">
       <Dropdown handleChange={handleChange} />
 
       {!pokemon.name ? (
@@ -44,7 +45,7 @@ function Column() {
           <Typetable multipliers={multipliers} />
         </>
       )}
-    </>
+    </div>
   );
 }
 

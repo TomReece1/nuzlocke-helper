@@ -16,7 +16,14 @@ code {
 .flex-container {
   display: flex;
   flex-wrap: nowrap;
-  /* background-color: DodgerBlue; */
+  text-align: center;
+}
+
+.flex-container-col {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 20px;
   text-align: center;
 }
 
