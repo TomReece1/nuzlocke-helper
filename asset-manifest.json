@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/nuzlocke-helper/static/css/main.b0ba7e2d.css",
-    "main.js": "/nuzlocke-helper/static/js/main.a0b62275.js",
+    "main.css": "/nuzlocke-helper/static/css/main.4ee472eb.css",
+    "main.js": "/nuzlocke-helper/static/js/main.c7cf8499.js",
     "index.html": "/nuzlocke-helper/index.html",
-    "main.b0ba7e2d.css.map": "/nuzlocke-helper/static/css/main.b0ba7e2d.css.map",
-    "main.a0b62275.js.map": "/nuzlocke-helper/static/js/main.a0b62275.js.map"
+    "main.4ee472eb.css.map": "/nuzlocke-helper/static/css/main.4ee472eb.css.map",
+    "main.c7cf8499.js.map": "/nuzlocke-helper/static/js/main.c7cf8499.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0ba7e2d.css",
-    "static/js/main.a0b62275.js"
+    "static/css/main.4ee472eb.css",
+    "static/js/main.c7cf8499.js"
   ]
 }
