@@ -39,7 +39,7 @@ function Typetable({ multipliers }) {
   ];
 
   return (
-    <TableContainer sx={{ width: 300 }} component={Paper}>
+    <TableContainer sx={{ width: 180 }} component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>

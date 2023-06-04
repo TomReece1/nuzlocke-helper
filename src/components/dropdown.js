@@ -22,7 +22,7 @@ function Dropdown({ handleChange }) {
       disablePortal
       id="combo-box-demo"
       options={pokedex}
-      sx={{ width: 300 }}
+      sx={{ width: 180 }}
       onChange={handleChange}
       renderInput={(params) => <TextField {...params} label="Pokemon" />}
     />

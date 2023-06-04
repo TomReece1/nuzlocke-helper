@@ -23,8 +23,9 @@ code {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  padding: 20px;
+  padding: 5px;
   text-align: center;
+  width: 180px;
 }
 
 /* .flex-container > div {

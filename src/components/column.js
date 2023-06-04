@@ -5,7 +5,6 @@ import { calcMultipliers } from "./brain";
 import Typetable from "./typetable";
 
 function Column({pokemon, setPokemon}) {
-  // const [pokemon, setPokemon] = useState({});
 
   const [multipliers, setMultipliers] = useState([]);
 
