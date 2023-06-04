@@ -41,6 +41,9 @@ function Column({pokemon, setPokemon}) {
             {pokemon.name} is {pokemon.types[0].type.name}
             {pokemon.types[1] && "/" + pokemon.types[1].type.name}
           </p>
+          <p>
+            and takes damage like so:
+          </p>
 
           <Typetable multipliers={multipliers} />
         </>

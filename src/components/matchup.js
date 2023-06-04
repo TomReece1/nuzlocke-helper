@@ -22,6 +22,7 @@ return (
     <div
     // style={{backgroundColor: 'white', width: 400}}
     >
+    <p>In this matchup the relevant moves to look out for are:</p>
     <p>{p1t1} hits {p2} for {calcMultiplier(p1t1, p2t1, p2t2)}x damage</p>
     {p1t2 && <p>{p1t2} hits {p2} for {calcMultiplier(p1t2, p2t1, p2t2)}x damage</p>}
     <p>{p2t1} hits {p1} for {calcMultiplier(p2t1, p1t1, p1t2)}x damage</p>
