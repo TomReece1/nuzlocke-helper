@@ -6,8 +6,5 @@ import { Button } from '@mui/material';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <div class="flex-container">
     <App />
-    {/* <App /> */}
-    </div>
 );

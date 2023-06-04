@@ -14,6 +14,7 @@ import Paper from '@mui/material/Paper';
 import { useState, useEffect } from "react";
 
 import axios from 'axios';
+import Typetable from './components/Typetable';
 
 const types = ['normal', 'fire', 'water', 'grass', 'electric', 'ice', 'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy']
 
@@ -55,38 +56,29 @@ return multipliers;
 
 function App() {
   const [pokemon, setPokemon] = useState({});
-  const [multipliers, setMultipliers] = useState([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
+  const [multipliers1, setMultipliers1] = useState([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
   const [pokedex, setPokedex] = useState([]);
 
   const rows = [
-    {'type':'normal', 'colour': 'lightgrey', 'dmg':multipliers[0]}
-    ,{'type':'fire', 'colour': 'orange', 'dmg':multipliers[1]}
-    ,{'type':'water', 'colour': 'lightblue', 'dmg':multipliers[2]}
-    ,{'type':'grass','colour': 'lightgreen',  'dmg':multipliers[3]}
-    ,{'type':'electric', 'colour': 'yellow', 'dmg':multipliers[4]}
-    ,{'type':'ice', 'colour': 'cyan', 'dmg':multipliers[5]}
-    ,{'type':'fighting', 'colour': 'brown', 'dmg':multipliers[6]}
-    ,{'type':'poison', 'colour': 'purple', 'dmg':multipliers[7]}
-    ,{'type':'ground', 'colour': 'beige', 'dmg':multipliers[8]}
-    ,{'type':'flying', 'colour': 'khaki', 'dmg':multipliers[9]}
-    ,{'type':'psychic', 'colour': 'hotpink', 'dmg':multipliers[10]}
-    ,{'type':'bug', 'colour': 'olive', 'dmg':multipliers[11]}
-    ,{'type':'rock', 'colour': 'indianred', 'dmg':multipliers[12]}
-    ,{'type':'ghost', 'colour': 'indigo', 'dmg':multipliers[13]}
-    ,{'type':'dragon', 'colour': 'gold', 'dmg':multipliers[14]}
-    ,{'type':'dark', 'colour': 'grey', 'dmg':multipliers[15]}
-    ,{'type':'steel', 'colour': 'lightgrey', 'dmg':multipliers[16]}
-    ,{'type':'fairy', 'colour': 'pink', 'dmg':multipliers[17]}
+    {'type':'normal', 'colour': 'lightgrey', 'dmg':multipliers1[0]}
+    ,{'type':'fire', 'colour': 'orange', 'dmg':multipliers1[1]}
+    ,{'type':'water', 'colour': 'lightblue', 'dmg':multipliers1[2]}
+    ,{'type':'grass','colour': 'lightgreen',  'dmg':multipliers1[3]}
+    ,{'type':'electric', 'colour': 'yellow', 'dmg':multipliers1[4]}
+    ,{'type':'ice', 'colour': 'cyan', 'dmg':multipliers1[5]}
+    ,{'type':'fighting', 'colour': 'brown', 'dmg':multipliers1[6]}
+    ,{'type':'poison', 'colour': 'purple', 'dmg':multipliers1[7]}
+    ,{'type':'ground', 'colour': 'beige', 'dmg':multipliers1[8]}
+    ,{'type':'flying', 'colour': 'khaki', 'dmg':multipliers1[9]}
+    ,{'type':'psychic', 'colour': 'hotpink', 'dmg':multipliers1[10]}
+    ,{'type':'bug', 'colour': 'olive', 'dmg':multipliers1[11]}
+    ,{'type':'rock', 'colour': 'indianred', 'dmg':multipliers1[12]}
+    ,{'type':'ghost', 'colour': 'indigo', 'dmg':multipliers1[13]}
+    ,{'type':'dragon', 'colour': 'gold', 'dmg':multipliers1[14]}
+    ,{'type':'dark', 'colour': 'grey', 'dmg':multipliers1[15]}
+    ,{'type':'steel', 'colour': 'lightgrey', 'dmg':multipliers1[16]}
+    ,{'type':'fairy', 'colour': 'pink', 'dmg':multipliers1[17]}
   ]
-
-  function dmgColor(dmg){
-    if (dmg == 0) return 'black';
-    else if (dmg == 0.25) return 'red';
-    else if (dmg == 0.5) return 'orange';
-    else if (dmg == 1) return 'white';
-    else if (dmg == 2) return 'green';
-    else return 'darkgreen';
-  }
 
   function handleChange(event, value){
     if (value){
@@ -94,9 +86,9 @@ function App() {
     .then((response)=>{
       setPokemon(response.data)
       if (response.data.types[1]){
-        setMultipliers(calcMultipliers(response.data.types[0].type.name,response.data.types[1].type.name))
+        setMultipliers1(calcMultipliers(response.data.types[0].type.name,response.data.types[1].type.name))
       } else {
-        setMultipliers(calcMultipliers(response.data.types[0].type.name))
+        setMultipliers1(calcMultipliers(response.data.types[0].type.name))
       }
     })
 
@@ -132,30 +124,7 @@ function App() {
           {pokemon.types[1] && '/'+pokemon.types[1].type.name}
         </p>  
 
-
-<TableContainer sx={{ width: 300, }} component={Paper}>
-      <Table  aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Type</TableCell>
-            <TableCell align="right">dmg</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.type}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row" sx={{backgroundColor: row.colour}}>
-                {row.type}
-              </TableCell>
-              <TableCell align="right" sx={{backgroundColor: dmgColor(row.dmg)}}>{row.dmg}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+<Typetable rows={rows}/>
     </>
 }
 
